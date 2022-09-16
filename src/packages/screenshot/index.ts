@@ -79,6 +79,10 @@ class Screenshot {
     downloadA.remove(); // 下载之后把创建的元素删除
     return true
   }
+
+  destroy(){
+    this.map = null
+  }
 }
 
 export {Screenshot}
