@@ -5,6 +5,9 @@
 [![NPM](https://img.shields.io/npm/l/@amap/screenshot)](https://github.com/AMap-Web/amap-screeshot)
 [![star](https://badgen.net/github/stars/amap-web/amap-screeshot)](https://github.com/AMap-Web/amap-screeshot)
 
+### 示例
+[codepen示例](https://codepen.io/yangyanggu/pen/JjvEzaR)
+
 ### 简介
 本项目为高德地图的截图插件
 
