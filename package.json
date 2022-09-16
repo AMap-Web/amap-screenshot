@@ -4,7 +4,10 @@
   "description": "amap js2.0 screenshot plugin",
   "keywords": [
     "amap",
-    "screenshot"
+    "screenshot",
+    "截图",
+    "地图截图",
+    "高德地图截图"
   ],
   "exports": {
     ".": {
