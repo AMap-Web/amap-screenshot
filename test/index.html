@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>测试</title>
+    <script src = 'https://webapi.amap.com/maps?v=2.0&key=747f980f217a31ba68d99301045a3fa7'></script>
+    <script src="https://webapi.amap.com/loca?v=2.0.0&key=747f980f217a31ba68d99301045a3fa7"></script>
+    <script src="/index.js" ></script>
+  </head>
+  <body>
+    <div id="app" style="height: 600px;"></div>
+    <div style="margin: 10px;">
+      <button onclick="screenMap()">生成图片</button>
+      <button onclick="download()">下载图片</button>
+    </div>
+    <div><img id="test"></div>
+    <script type="text/javascript">
+      const center = [116.335036, 39.900082]
+      const map = new AMap.Map('app', {
+        center: center,
+        zoom: 10,
+        viewMode: '3D',
+        pitch: 35,
+        WebGLParams: {
+          preserveDrawingBuffer: true
+        }
+      })
+      map.add(new AMap.Marker({
+        position: center
+      }))
+      function openInfo() {
+        //构建信息窗体中显示的内容
+        let info = [];
+        info.push("<div class='input-card content-window-card'><div><img style=\"float:left;width:67px;height:16px;\" src=\" https://webapi.amap.com/images/autonavi.png \"/></div> ");
+        info.push("<div style=\"padding:7px 0px 0px 0px;\"><h4>高德软件</h4>");
+        info.push("<p class='input-item'>电话 : 010-84107000   邮编 : 100102</p>");
+        info.push("<p class='input-item'>地址 :北京市朝阳区望京阜荣街10号首开广场4层</p></div></div>");
+
+        const infoWindow = new AMap.InfoWindow({
+          content: info.join(""),  //使用默认信息窗体框样式，显示信息内容
+          anchor: 'bottom-center',
+          offset: [0, -24]
+        });
+        infoWindow.open(map, map.getCenter());
+      }
+      openInfo()
+
+      let loca = new Loca.Container({
+        map,
+      });
+
+      let geo = new Loca.GeoJSONSource({
+        url: 'https://a.amap.com/Loca/static/loca-v2/demos/mock_data/bj_bus.json',
+      });
+
+      let ll = new Loca.LineLayer({
+        loca,
+      });
+      let colors = ['#f7fcf5', '#e5f5e0', '#c7e9c0', '#a1d99b', '#74c476', '#41ab5d', '#238b45', '#006d2c', '#00441b'].reverse();
+      ll.setSource(geo, {
+        color: function (index, prop) {
+          let i = index % colors.length;
+          return colors[i];
+        },
+        lineWidth: (index, prop) => {
+          let i = index % colors.length;
+          return i * 0.1 + 2;
+        },
+        altitude: function (index, feature) {
+          let i = index % colors.length;
+          return 100 * i;
+        },
+        dash: [10, 4, 10, 2],
+      });
+
+      const screenshot = new AMap.Screenshot(map)
+      function screenMap(){
+        screenshot.toDataURL().then(url => {
+          document.getElementById('test').setAttribute('src', url)
+        })
+
+      }
+      function download(){
+        screenshot.download({
+          type: 'image/jpeg',
+          filename: 'test.jpg'
+        }).then(res => {
+          console.log('下载成功')
+        })
+      }
+
+    </script>
+  </body>
+</html>

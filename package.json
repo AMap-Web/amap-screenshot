@@ -1,0 +1,86 @@
+{
+  "name": "@amap/screenshot",
+  "version": "0.0.1",
+  "description": "amap js2.0 screenshot plugin",
+  "keywords": [
+    "amap",
+    "screenshot"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index-cjs.js",
+      "import": "./dist/index-es.js"
+    },
+    "./es": "./dist/index-es.js",
+    "./lib": "./dist/index-cjs.js",
+    "./*": "./*"
+  },
+  "main": "dist/index-cjs.js",
+  "module": "dist/index-es.js",
+  "unpkg": "dist/index.js",
+  "jsdelivr": "dist/index.js",
+  "packageManager": "pnpm@7.9.4",
+  "workspaces": [
+    "src/*"
+  ],
+  "engines": {
+    "node": ">= 16"
+  },
+  "scripts": {
+    "build": "npm run clean:dist && cross-env NODE_ENV=production rollup -c rollup.config.js && cross-env NODE_ENV=production rollup -c rollup.umd.config.js",
+    "dev": "npm run clean:dist && cross-env NODE_ENV=development rollup -c rollup.umd.config.js -w",
+    "clean:dist": "rimraf dist",
+    "lint": "eslint --fix --ext .js,.vue src/",
+    "prettier": "prettier --write src/"
+  },
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ],
+  "repository": "https://github.com/AMap-Web/amap-three",
+  "author": "guyangyang <407042815@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AMap-Web/amap-three/issues"
+  },
+  "homepage": "https://github.com/AMap-Web/amap-three",
+  "dependencies": {
+    "html2canvas": "^1.4.1"
+  },
+  "devDependencies": {
+    "@pnpm/logger": "4.0.0",
+    "@pnpm/types": "8.5.0",
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "4.0.0",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "5.35.1",
+    "@typescript-eslint/parser": "5.35.1",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.15.5",
+    "eslint": "8.22.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-define-config": "1.6.0",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "fast-glob": "3.2.7",
+    "fs-extra": "10.0.0",
+    "gulp": "4.0.2",
+    "lint-staged": "^12.4.0",
+    "prettier": "^2.7.1",
+    "rimraf": "3.0.2",
+    "rollup": "^2.78.1",
+    "rollup-plugin-esbuild": "4.9.3",
+    "rollup-plugin-filesize": "9.1.2",
+    "rollup-plugin-serve": "^2.0.1",
+    "rollup-plugin-livereload": "^2.0.5",
+    "typescript": "^4.7.4",
+    "magic-string": "^0.25.7"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ]
+}
