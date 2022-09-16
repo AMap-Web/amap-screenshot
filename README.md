@@ -85,11 +85,11 @@ map: 地图实例对象<br/>
 
 ###### 成员函数
 
-| 函数名       | 入参                                                    | 返回值                        | 描述                                              |
-|-----------|-------------------------------------------------------|----------------------------|-------------------------------------------------|
-| toCanvas  | 无                                                     | Promise<HTMLCanvasElement> | 返回生成的canvas对象                                   |
-| toDataURL | imageType(可选值：`image/png` `image/jpeg`，默认`image/png`) | Promise<string>            | 返回生成的图片的base64值                                 |
-| download  | {filename: string, type: imageType}                            | Promise<boolean>           | 下载文件，默认下载png格式，可以修改为jpg，type的值与上面toDataURL的参数一致 |
+| 函数名       | 入参                                                    | 返回值                          | 描述                                              |
+|-----------|-------------------------------------------------------|------------------------------|-------------------------------------------------|
+| toCanvas  | 无                                                     | Promise\<HTMLCanvasElement\> | 返回生成的canvas对象                                   |
+| toDataURL | imageType(可选值：`image/png` `image/jpeg`，默认`image/png`) | Promise\<string\>              | 返回生成的图片的base64值                                 |
+| download  | {filename: string, type: imageType}                            | Promise\<boolean\>             | 下载文件，默认下载png格式，可以修改为jpg，type的值与上面toDataURL的参数一致 |
 
 ###### 事件列表
 
