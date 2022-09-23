@@ -2,8 +2,8 @@
 [![npm (tag)](https://img.shields.io/npm/v/@amap/screenshot)](https://www.npmjs.org/package/@amap/screenshot)
 [![NPM downloads](http://img.shields.io/npm/dm/@amap/screenshot.svg)](https://npmjs.org/package/@amap/screenshot)
 ![JS gzip size](http://img.badgesize.io/https://unpkg.com/@amap/screenshot/dist/index.js?compression=gzip&label=gzip%20size:%20JS)
-[![NPM](https://img.shields.io/npm/l/@amap/screenshot)](https://github.com/AMap-Web/amap-screeshot)
-[![star](https://badgen.net/github/stars/amap-web/amap-screeshot)](https://github.com/AMap-Web/amap-screeshot)
+[![NPM](https://img.shields.io/npm/l/@amap/screenshot)](https://github.com/AMap-Web/amap-screenshot)
+[![star](https://badgen.net/github/stars/amap-web/amap-screenshot)](https://github.com/AMap-Web/amap-screenshot)
 
 ### 示例
 [codepen示例](https://codepen.io/yangyanggu/pen/JjvEzaR)

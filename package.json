@@ -1,6 +1,6 @@
 {
   "name": "@amap/screenshot",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "高德地图 JSAPI v2.0 地图截图插件",
   "keywords": [
     "amap",
@@ -41,13 +41,13 @@
     "not ie 11",
     "not op_mini all"
   ],
-  "repository": "https://github.com/AMap-Web/amap-screeshot",
+  "repository": "https://github.com/AMap-Web/amap-screenshot",
   "author": "guyangyang <407042815@qq.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AMap-Web/amap-screeshot/issues"
+    "url": "https://github.com/AMap-Web/amap-screenshot/issues"
   },
-  "homepage": "https://github.com/AMap-Web/amap-screeshot",
+  "homepage": "https://github.com/AMap-Web/amap-screenshot",
   "dependencies": {
     "html2canvas": "^1.4.1"
   },
