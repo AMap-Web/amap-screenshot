@@ -35,7 +35,7 @@ CDN加载需要先加载高德地图JS，代码如下
 #### npm加载
 npm加载可以直接使用安装库
 ```shell
-npm install '@amap/screenshot'
+npm install @amap/screenshot
 ```
 
 ### 使用示例
